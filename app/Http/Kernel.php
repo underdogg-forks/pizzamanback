@@ -58,5 +58,14 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-    ];
+
+		'jwt.auth' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
+		'jwt.refresh' => \Tymon\JWTAuth\Http\Middleware\RefreshToken::class,
+
+        'role' => \App\Http\Middleware\TokenLaratrustRole::class,
+        'permission' => \App\Http\Middleware\TokenLaratrustPermission::class,
+		'ability' => \App\Http\Middleware\TokenLaratrustAbility::class,
+
+
+	];
 }
